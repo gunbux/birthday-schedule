@@ -11,3 +11,11 @@
     <li>typing bday plan should open up some form of template for me to plan the next available birthday. It should have headings such as Gift Ideas, Log, Review, Reactions, etc. etc. for me to remember</li>
     <li>It should work every year</li>
 </ol>
+
+### Usage
+Typing 'bday' without arguments will print the next birthday. 'bday ls' will list all the birthdays in random order. Use 'bday add' and 'bday del' to modify the birthday list.
+
+### Updates
+<ul>
+    <li>Completed functionaility for ls, add, delete commands</li>
+</ul>
