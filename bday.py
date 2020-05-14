@@ -5,8 +5,8 @@ from datetime import datetime,date,timedelta
 
 ##Testing area
 ##print(f'The number of system arguments given is {len(sys.argv)}') #-Working as intended
-#print(f'type of today is {type(today)}')
-print(f'sys.argvs parsed are {sys.argv}')
+##print(f'type of today is {type(today)}')
+##print(f'sys.argvs parsed are {sys.argv}') #-Working as intended
 
 ##Declaration and initialization of variables
 #bdays = {'Me':'10 February 2000'} #-TO BE DELETED -- Initial test case
