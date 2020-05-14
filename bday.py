@@ -43,17 +43,23 @@ def dayDifference(name):
 
 if len(sys.argv) == 1:
     least = None
-    birthdaychild = None
+    list_of_names = []
     for name in bdays:
         diff = dayDifference(name)
         if least == None:
             least = diff
-            birthdaychild = name
         elif diff < least:
             least = diff
-            birthdaychild = name
 
-    print(f'Next birthday is {birthdaychild} in {least} days')
+    for name in bdays:
+        diff = dayDifference(name)
+        if diff == least:
+            list_of_names.append(name)
+    str_of_names = ''
+    for name in list_of_names:
+        str_of_names += name + ','
+
+    print(f'Next birthday is {str_of_names} in {least} days')
     pass
 
 
