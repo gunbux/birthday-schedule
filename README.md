@@ -13,7 +13,9 @@
 </ol>
 
 ### Usage
-Typing 'bday' without arguments will print the next birthday. 'bday ls' will list all the birthdays in random order. Use 'bday add' and 'bday del' to modify the birthday list.
+Typing 'bday' without arguments will print the next birthday. 
+'bday ls' will list all the birthdays in random order. 
+Use 'bday add' and 'bday del' to modify the birthday list.
 
 ### Updates
 <ul>
