@@ -24,3 +24,4 @@ Typing 'bday' without arguments will print the next birthday. 'bday ls' will lis
 - Error handling
 - What if multiple birthdays on the same day?
 - 'bday plan' command
+- a help command of some sort
