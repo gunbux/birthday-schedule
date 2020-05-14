@@ -19,3 +19,8 @@ Typing 'bday' without arguments will print the next birthday. 'bday ls' will lis
 <ul>
     <li>Completed functionaility for ls, add, delete commands</li>
 </ul>
+
+### Things to do
+- Error handling
+- What if multiple birthdays on the same day?
+- 'bday plan' command
