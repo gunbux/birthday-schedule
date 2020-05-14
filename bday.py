@@ -35,7 +35,7 @@ def dayDifference(name):
     else:
         difference = (bday2-today).days
 
-    print(f'There are {difference} more days to {name}\'s birthday')
+    ##print(f'There are {difference} more days to {name}\'s birthday')
     return difference
 
 ##Test cases
