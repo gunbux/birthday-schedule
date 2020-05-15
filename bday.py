@@ -1,5 +1,7 @@
 #!python3
 
+import shutil
+from pathlib import Path
 import os,sys,shelve
 from datetime import datetime,date,timedelta
 
@@ -60,8 +62,22 @@ if len(sys.argv) == 1:
         str_of_names += name + ','
 
     print(f'Next birthday is {str_of_names} in {least} days')
-    pass
 
+##TODO: if 'bday upcoming' is parsed, list all birthdays within the next 60 days
+if len(sys.argv) == 2 and sys.argv[1].lower() == 'upcoming':
+    print('Checking upcoming birthdays...')
+    for name in bdays:
+        diff = dayDifference(name)
+        if diff <= 60:
+            print(f'{name}\'s birthday is in {diff} days')
+
+##TODO: if 'bday upcoming (number)' is parsed, list all birthdays within the next (number) of days
+if len(sys.argv) == 3 and sys.argv[1].lower() == 'upcoming':
+    print('Checking upcoming birthdays...')
+    for name in bdays:
+        diff = dayDifference(name)
+        if diff <= int(sys.argv[2]):
+            print(f'{name}\'s birthday is in {diff} days')
 
 ##TODO: if 'ls' is parsed, list bdays
 if len(sys.argv) == 2 and sys.argv[1].lower() == 'ls':
@@ -82,6 +98,14 @@ if len(sys.argv) == 3 and sys.argv[1].lower() == 'del':
     print("Birthday deleted. Type 'bday ls' to find list of updated birthdays")
 
 ##TODO: if 'plan' is parsed with no arguments behind, plan the next available birthday. Else, check if the next argument matches a name in the lists and plan for that birthday instead. To plan, copy a template file and add it into a folder of sorts.
+if len(sys.argv) == 3 and sys.argv[1].lower() == 'plan':
+    name = sys.argv[2]
+    bday = date.today() + timedelta(days = dayDifference(name))
+    #print(f'bday of said man iz {bday}') #-Working as intended
+    cwd = str(Path.cwd())
+    #print(f'Current working directory is {cwd}') #-Working as intended
+    filename = str(name)+str(bday.strftime('%Y'))
+    shutil.copyfile(f'{cwd}/template.md',f'{cwd}/{filename}.md')
 
 shelfFile['bdays'] = bdays
 shelfFile.close
