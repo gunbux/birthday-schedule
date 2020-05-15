@@ -43,6 +43,22 @@ def dayDifference(name):
 ##Test cases
 ##NIL
 
+##TODO: if 'bday help' is parsed, print a help/usage for the command
+if len(sys.argv) == 2 and sys.argv[1] == 'help':
+    print(
+        '''
+List of commands\n
+    bday help - displays this page
+    bday - lists the next upcoming birthday
+    bday add (name) (birthday) - adds a birthday of name and date birthday in the database
+    bday del (name) - deletes a birthday of name
+    bday ls - lists all birthdays stored
+    bday upcoming - displays all upcoming birthdays in the next 60 days
+    bday upcoming (days) - displays all upcoming birthdays in the next (days) days
+
+        '''
+    )
+
 if len(sys.argv) == 1:
     least = None
     list_of_names = []
